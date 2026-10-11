@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <include domain="database" path="gastos.db" />
+    <include domain="sharedpref" path="gastos_prefs.xml" />
+    <exclude domain="sharedpref" path="google_drive_token.xml" />
+</full-backup-content>

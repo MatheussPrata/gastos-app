@@ -1,0 +1,111 @@
+<resources>
+    <string name="app_name">GastosApp</string>
+    
+    <!-- Navigation -->
+    <string name="nav_expenses">Gastos</string>
+    <string name="nav_cards">Cartões</string>
+    <string name="nav_reports">Relatórios</string>
+    <string name="nav_settings">Configurações</string>
+    
+    <!-- Expenses Screen -->
+    <string name="expenses_title">Gastos</string>
+    <string name="add_expense">Adicionar Gasto</string>
+    <string name="expense_amount">Valor</string>
+    <string name="expense_description">Descrição</string>
+    <string name="expense_category">Categoria</string>
+    <string name="expense_date">Data</string>
+    <string name="expense_card">Cartão</string>
+    <string name="expense_installments">Parcelas</string>
+    <string name="expense_is_installment">É parcelado?</string>
+    <string name="save">Salvar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Excluir</string>
+    <string name="confirm_delete">Confirmar exclusão</string>
+    <string name="delete_expense_message">Tem certeza que deseja excluir este gasto?</string>
+    
+    <!-- Categories -->
+    <string name="categories_title">Categorias</string>
+    <string name="add_category">Nova Categoria</string>
+    <string name="edit_category">Editar Categoria</string>
+    <string name="category_name">Nome da categoria</string>
+    <string name="category_color">Cor</string>
+    <string name="category_icon">Ícone</string>
+    <string name="subcategories">Subcategorias</string>
+    <string name="add_subcategory">Adicionar Subcategoria</string>
+    <string name="no_categories">Nenhuma categoria ainda</string>
+    
+    <!-- Cards -->
+    <string name="cards_title">Cartões de Crédito</string>
+    <string name="add_card">Adicionar Cartão</string>
+    <string name="card_name">Nome do cartão</string>
+    <string name="card_limit">Limite</string>
+    <string name="card_closing_day">Dia de fechamento</string>
+    <string name="card_due_day">Dia de vencimento</string>
+    <string name="card_color">Cor do cartão</string>
+    <string name="current_invoice">Fatura atual</string>
+    <string name="next_invoice">Próxima fatura</string>
+    
+    <!-- Reports -->
+    <string name="reports_title">Relatórios</string>
+    <string name="monthly_summary">Resumo do Mês</string>
+    <string name="by_category">Por Categoria</string>
+    <string name="by_card">Por Cartão</string>
+    <string name="expenses_chart">Gráfico de Gastos</string>
+    <string name="total_expenses">Total de Gastos</string>
+    <string name="total_income">Total de Receitas</string>
+    <string name="balance">Saldo</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Configurações</string>
+    <string name="theme_settings">Tema</string>
+    <string name="theme_light">Claro</string>
+    <string name="theme_dark">Escuro</string>
+    <string name="theme_system">Sistema</string>
+    <string name="accent_color">Cor de Destaque</string>
+    <string name="backup_settings">Backup</string>
+    <string name="backup_to_drive">Backup no Google Drive</string>
+    <string name="restore_from_drive">Restaurar do Google Drive</string>
+    <string name="export_json">Exportar JSON</string>
+    <string name="import_json">Importar JSON</string>
+    <string name="budget_limits">Limites de Gasto</string>
+    <string name="add_budget_limit">Adicionar Limite</string>
+    <string name="budget_category">Categoria</string>
+    <string name="budget_amount">Valor Limite</string>
+    <string name="budget_period">Período</string>
+    <string name="period_monthly">Mensal</string>
+    <string name="period_weekly">Semanal</string>
+    <string name="notifications">Notificações</string>
+    <string name="enable_notifications">Ativar avisos de limite</string>
+    <string name="about">Sobre</string>
+    <string name="version">Versão 1.0.0</string>
+    
+    <!-- Common -->
+    <string name="loading">Carregando…</string>
+    <string name="error">Erro</string>
+    <string name="success">Sucesso</string>
+    <string name="no_data">Sem dados</string>
+    <string name="select_date">Selecionar data</string>
+    <string name="select_color">Selecionar cor</string>
+    <string name="optional">Opcional</string>
+    <string name="required">Obrigatório</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="ok">OK</string>
+    <string name="done">Concluído</string>
+    
+    <!-- Backup -->
+    <string name="backup_success">Backup realizado com sucesso</string>
+    <string name="backup_failed">Falha no backup</string>
+    <string name="restore_success">Restaurado com sucesso</string>
+    <string name="restore_failed">Falha ao restaurar</string>
+    <string name="export_success">Exportado com sucesso</string>
+    <string name="import_success">Importado com sucesso</string>
+    <string name="select_backup_file">Selecione o arquivo de backup</string>
+    
+    <!-- Budget Alerts -->
+    <string name="budget_alert_title">Limite de gasto atingido</string>
+    <string name="budget_alert_body">Você atingiu o limite de %1$s para %2$s</string>
+    <string name="budget_warning_title">Perto do limite</string>
+    <string name="budget_warning_body">Você gastou %1$d%% do limite de %2$s para %3$s</string>
+</resources>
