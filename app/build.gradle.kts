@@ -73,16 +73,17 @@ dependencies {
     val activityCompose = "androidx.activity:activity-compose:1.9.0"
     val lifecycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:2.7.0"
     val lifecycleViewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0"
+    val material3Version = "1.2.0"
 
     // AppCompat (required for Theme.AppCompat.DayNight.NoActionBar)
     implementation("androidx.appcompat:appcompat:1.7.0")
 
     // Material 3 (Compose)
-    implementation("androidx.compose.material3:material3:1.2.1")
-    implementation("androidx.compose.material3:material3-window-size-class:1.2.1")
+    implementation("androidx.compose.material3:material3:$material3Version")
+    implementation("androidx.compose.material3:material3-window-size-class:$material3Version")
 
-    // Compose BOM
-    implementation(platform("androidx.compose:compose-bom:2024.08.00"))
+    // Compose BOM (2024.06.00 is compatible with Kotlin 1.9.20)
+    implementation(platform("androidx.compose:compose-bom:2024.06.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
