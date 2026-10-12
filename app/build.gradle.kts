@@ -94,27 +94,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
 
-    // WorkManager
-    implementation("androidx.work:work-runtime-ktx:2.9.0")
-
-    // Google Play Services Auth (for Drive API)
-    implementation("com.google.android.gms:play-services-auth:21.0.0")
-
-    // Serialization (JSON export/import)
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
-
-    // OkHttp
-    implementation("com.squareup.okhttp3:okhttp:4.12.0")
-
-    // Gson
-    implementation("com.google.code.gson:gson:2.11.0")
-
-    // Coil (image loading - for future use)
-    implementation("io.coil-kt:coil-compose:2.6.0")
-
-    // Accompanist (permissions, etc.)
-    implementation("com.google.accompanist:accompanist-permissions:0.32.0")
-
     // Testing
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
