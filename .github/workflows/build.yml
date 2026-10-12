@@ -19,6 +19,7 @@ jobs:
       CMDLINE_TOOLS_VERSION: 11076708_latest
       ANDROID_API_LEVEL: 34
       ANDROID_BUILD_TOOLS_VERSION: 34.0.0
+      GRADLE_VERSION: 8.5
 
     steps:
       - name: Checkout repository
@@ -67,6 +68,12 @@ jobs:
             "extras;android;m2repository" \
             "extras;google;m2repository" \
             "extras;google;google_play_services"
+
+      - name: Download Gradle Wrapper JAR
+        run: |
+          mkdir -p gradle/wrapper
+          wget -q "https://github.com/gradle/gradle/raw/v${GRADLE_VERSION}/gradle/wrapper/gradle-wrapper.jar" -O gradle/wrapper/gradle-wrapper.jar
+          wget -q "https://github.com/gradle/gradle/raw/v${GRADLE_VERSION}/gradle/wrapper/gradle-wrapper.properties" -O gradle/wrapper/gradle-wrapper.properties
 
       - name: Cache Android SDK
         uses: actions/cache@v4
