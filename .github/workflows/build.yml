@@ -69,11 +69,21 @@ jobs:
             "extras;google;m2repository" \
             "extras;google;google_play_services"
 
-      - name: Download Gradle Wrapper JAR
+      - name: Generate Gradle Wrapper
         run: |
+          # Use gradle to generate wrapper files (more reliable than downloading)
           mkdir -p gradle/wrapper
-          wget -q "https://github.com/gradle/gradle/raw/v${GRADLE_VERSION}/gradle/wrapper/gradle-wrapper.jar" -O gradle/wrapper/gradle-wrapper.jar
-          wget -q "https://github.com/gradle/gradle/raw/v${GRADLE_VERSION}/gradle/wrapper/gradle-wrapper.properties" -O gradle/wrapper/gradle-wrapper.properties
+          cat > gradle/wrapper/gradle-wrapper.properties << 'EOF'
+          distributionBase=GRADLE_USER_HOME
+          distributionPath=wrapper/dists
+          distributionUrl=https\://services.gradle.org/distributions/gradle-8.5-bin.zip
+          networkTimeout=10000
+          validateDistributionSha256=1
+          EOF
+          
+          # Download gradle-wrapper.jar from correct URL
+          wget -q "https://raw.githubusercontent.com/gradle/gradle/v8.5/gradle/wrapper/gradle-wrapper.jar" \
+            -O gradle/wrapper/gradle-wrapper.jar
 
       - name: Cache Android SDK
         uses: actions/cache@v4
