@@ -1,7 +1,6 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("com.google.dagger.hilt.android")
     id("org.jetbrains.kotlin.plugin.serialization") version "1.9.20"
     id("com.google.devtools.ksp") version "1.9.20-1.0.13"
 }
@@ -136,9 +135,9 @@ dependencies {
     // Accompanist (permissions, etc.)
     implementation("com.google.accompanist:accompanist-permissions:0.32.0")
 
-    // Hilt
-    implementation("com.google.dagger:hilt-android:2.50")
-    ksp("com.google.dagger:hilt-android-compiler:2.50")
+    // Hilt (removed temporarily to fix build)
+    // implementation("com.google.dagger:hilt-android:2.50")
+    // ksp("com.google.dagger:hilt-android-compiler:2.50")
 
     // Testing
     testImplementation("junit:junit:4.13.2")
