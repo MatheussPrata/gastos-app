@@ -19,6 +19,7 @@ jobs:
       CMDLINE_TOOLS_VERSION: 11076708_latest
       ANDROID_API_LEVEL: 34
       ANDROID_BUILD_TOOLS_VERSION: 34.0.0
+      GRADLE_VERSION: 8.7
 
     steps:
       - name: Checkout repository
@@ -34,7 +35,7 @@ jobs:
       - name: Set up Gradle (official action - handles wrapper, cache, everything)
         uses: gradle/gradle-build-action@v3
         with:
-          gradle-version: 8.5
+          gradle-version: 8.7
           arguments: wrapper
           cache-read-only: false
 
