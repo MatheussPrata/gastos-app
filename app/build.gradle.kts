@@ -119,14 +119,14 @@ dependencies {
     implementation("com.google.android.gms:play-services-auth:21.0.0")
 
     // Google Drive API
-    implementation("com.google.apis:google-api-services-drive:v3-rev20240506-2.0.0")
+    implementation("com.google.apis:google-api-services-drive:v3-rev20231107-2.0.0")
 
     // Google HTTP Client & OAuth
     implementation("com.google.http-client:google-http-client-android:1.44.1")
     implementation("com.google.oauth-client:google-oauth-client:1.34.1")
 
-    // Compose Charts
-    implementation("androidx.compose.charts:charts:1.0.0-alpha04")
+    // Compose Charts (comentado - experimental, adicionar depois)
+    // implementation("androidx.compose.charts:charts:1.0.0-alpha04")
 
     // Serialization (JSON export/import)
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
