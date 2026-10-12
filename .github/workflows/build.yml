@@ -19,7 +19,6 @@ jobs:
       CMDLINE_TOOLS_VERSION: 11076708_latest
       ANDROID_API_LEVEL: 34
       ANDROID_BUILD_TOOLS_VERSION: 34.0.0
-      GRADLE_VERSION: 8.5
 
     steps:
       - name: Checkout repository
@@ -31,6 +30,13 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
           cache: 'gradle'
+
+      - name: Set up Gradle (official action - handles wrapper, cache, everything)
+        uses: gradle/gradle-build-action@v3
+        with:
+          gradle-version: 8.5
+          arguments: wrapper
+          cache-read-only: false
 
       - name: Install Android SDK (manual, reliable)
         run: |
@@ -69,22 +75,6 @@ jobs:
             "extras;google;m2repository" \
             "extras;google;google_play_services"
 
-      - name: Generate Gradle Wrapper
-        run: |
-          # Use gradle to generate wrapper files (more reliable than downloading)
-          mkdir -p gradle/wrapper
-          cat > gradle/wrapper/gradle-wrapper.properties << 'EOF'
-          distributionBase=GRADLE_USER_HOME
-          distributionPath=wrapper/dists
-          distributionUrl=https\://services.gradle.org/distributions/gradle-8.5-bin.zip
-          networkTimeout=10000
-          validateDistributionSha256=1
-          EOF
-          
-          # Download gradle-wrapper.jar from correct URL
-          wget -q "https://raw.githubusercontent.com/gradle/gradle/v8.5/gradle/wrapper/gradle-wrapper.jar" \
-            -O gradle/wrapper/gradle-wrapper.jar
-
       - name: Cache Android SDK
         uses: actions/cache@v4
         with:
@@ -93,19 +83,6 @@ jobs:
           key: ${{ runner.os }}-android-sdk-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-android-sdk-
-
-      - name: Cache Gradle packages
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
-
-      - name: Grant execute permission for gradlew
-        run: chmod +x ./gradlew
 
       - name: Build Debug APK
         run: ./gradlew assembleDebug --no-daemon --stacktrace
