@@ -83,6 +83,9 @@ dependencies {
     implementation("androidx.compose.material3:material3:1.2.1")
     implementation("androidx.compose.material3:material3-window-size-class:1.2.1")
 
+    // Material Components for Android Views (required for Theme.MaterialComponents XML themes)
+    implementation("com.google.android.material:material:1.12.0")
+
     // Compose BOM
     implementation(platform("androidx.compose:compose-bom:2024.08.00"))
     implementation("androidx.compose.ui:ui")
