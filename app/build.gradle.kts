@@ -2,7 +2,6 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.serialization") version "1.9.20"
-    id("com.google.devtools.ksp") version "1.9.20-1.0.13"
 }
 
 android {
@@ -18,11 +17,6 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
-    }
-
-    // Room schema export for KSP
-    ksp {
-        arg("room.schemaLocation", "$projectDir/schemas")
     }
 
     buildTypes {
@@ -92,12 +86,6 @@ dependencies {
     // Navigation
     implementation("androidx.navigation:navigation-compose:2.7.7")
 
-    // Room
-    val roomVersion = "2.6.1"
-    implementation("androidx.room:room-runtime:$roomVersion")
-    implementation("androidx.room:room-ktx:$roomVersion")
-    ksp("androidx.room:room-compiler:$roomVersion")
-
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
@@ -111,14 +99,6 @@ dependencies {
 
     // Google Play Services Auth (for Drive API)
     implementation("com.google.android.gms:play-services-auth:21.0.0")
-
-    // Google Drive API (comentado - requer google-services.json e configuração extra)
-    // implementation("com.google.apis:google-api-services-drive:v3-rev20231107-2.0.0")
-    // implementation("com.google.http-client:google-http-client-android:1.44.1")
-    // implementation("com.google.oauth-client:google-oauth-client:1.34.1")
-
-    // Compose Charts (comentado - experimental, adicionar depois)
-    // implementation("androidx.compose.charts:charts:1.0.0-alpha04")
 
     // Serialization (JSON export/import)
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
@@ -134,10 +114,6 @@ dependencies {
 
     // Accompanist (permissions, etc.)
     implementation("com.google.accompanist:accompanist-permissions:0.32.0")
-
-    // Hilt (removed temporarily to fix build)
-    // implementation("com.google.dagger:hilt-android:2.50")
-    // ksp("com.google.dagger:hilt-android-compiler:2.50")
 
     // Testing
     testImplementation("junit:junit:4.13.2")
