@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             GastosTheme(
                 darkTheme = settingsViewModel.themeMode == 2,
-                dynamicColor = true,
+                dynamicColor = false,
                 accentColor = settingsViewModel.accentColor
             ) {
                 Surface(

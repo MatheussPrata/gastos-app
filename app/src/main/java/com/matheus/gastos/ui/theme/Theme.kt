@@ -39,7 +39,7 @@ private val LightColorScheme = dynamicLightColorScheme(
 @Composable
 fun GastosTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false, // Disabled by default (requires API 31+)
     accentColor: Int = 0xFF6750A4,
     content: @Composable () -> Unit
 ) {
