@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Base application theme -->
-    <style name="Theme.GastosApp" parent="Theme.Material3.DayNight">
+    <style name="Theme.GastosApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your theme here -->
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
@@ -10,7 +10,7 @@
     </style>
 
     <!-- Splash theme -->
-    <style name="Theme.GastosApp.Splash" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.GastosApp.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_background</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
